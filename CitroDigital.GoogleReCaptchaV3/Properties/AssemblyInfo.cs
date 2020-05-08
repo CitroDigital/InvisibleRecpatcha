@@ -1,15 +1,12 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿using CMS;
+using System.Reflection;
 using System.Runtime.InteropServices;
-using CitroDigital.GoogleReCaptchaV3.Models;
-using CMS;
-using Kentico.Forms.Web.Mvc;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CitroDigital.GoogleReCaptchaV3")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Form Component to utilize Google v3 Recaptcha In Kentico Form Builder")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("[Citro Digital] Josh Kerbaugh")]
 [assembly: AssemblyProduct("CitroDigital.GoogleReCaptchaV3")]
@@ -36,14 +33,7 @@ using Kentico.Forms.Web.Mvc;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
 
 [assembly: AssemblyDiscoverable]
 
-[assembly: RegisterFormComponent(
-        RecaptchaV3Component.IDENTIFIER,
-        typeof(RecaptchaV3Component),
-    "{$Google.Recaptcha.V3.Name$}",
-        Description = "{$Google.Recaptcha.V3.Name$}",
-        IconClass = "icon-recaptcha",
-        ViewName = "_RecaptchaV3"
-    )]

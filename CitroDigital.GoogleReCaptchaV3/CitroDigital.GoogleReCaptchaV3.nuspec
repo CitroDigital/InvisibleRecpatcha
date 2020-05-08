@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package >
-  <metadata>
+  <metadata minClientVersion="4.3">
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
+    <projectUrl>https://github.com/CitroDigital/V3GoogleRecaptcha</projectUrl>
+    <icon>images\kentico.png</icon>
+
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <license type="expression">MIT</license>
+    <description>Form Component to utilize Google v3 Recaptcha In Kentico Form Builder</description>
     <copyright>Copyright 2020</copyright>
     <tags>Kentico FormBuilder</tags>
     <dependencies>
-      <group targetFramework=".NETFramework4.6.1" />
+      <group targetFramework="net461">
       <dependency id="Kentico.Libraries" version="12.0.29" />
+      </group>
     </dependencies>
   </metadata>
   <files>
     <!-- Include the compiled views dll -->
     <file src="bin\CitroDigital.GoogleReCaptchaV3.Views.dll" target = "lib\net461" />
+    <file src="..\.nuget\kentico.png" target="images" />
   </files>
-  
+
 </package>

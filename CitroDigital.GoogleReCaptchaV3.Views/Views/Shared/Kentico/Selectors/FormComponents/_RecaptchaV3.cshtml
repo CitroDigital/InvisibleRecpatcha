@@ -1,0 +1,5 @@
+﻿@using CitroDigital.GoogleReCaptchaV3.Infrastructure
+@model RecaptchaV3Component
+
+@Html.HiddenFor(_ => _.Action)
+@Html.RecaptchaFor(_ => _.RecaptchaResponse, Model.Action)

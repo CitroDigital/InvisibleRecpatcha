@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0" DefaultTargets="Build">
-  <Import Project="..\packages\ILRepack.2.0.17\build\ILRepack.props" Condition="Exists('..\packages\ILRepack.2.0.17\build\ILRepack.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\ILRepack.2.0.17\build\ILRepack.props" Condition="Exists('..\packages\ILRepack.2.0.17\build\ILRepack.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -703,7 +703,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Web.config" />
-    <Content Include="Views\Shared\FormComponents\_RecaptchaV3.cshtml" />
+    <Content Include="Views\Shared\Kentico\Selectors\FormComponents\_RecaptchaV3.cshtml" />
     <Content Include="Views\Shared\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -753,10 +753,10 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\ILRepack.2.0.17\build\ILRepack.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILRepack.2.0.17\build\ILRepack.props'))" />
     <Error Condition="!Exists('..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets'))" />
     <Error Condition="!Exists('..\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <Import Project="..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets" Condition="Exists('..\packages\Kentico.LanguagePack.English.12.0.29\build\Kentico.LanguagePack.English.targets')" />
   <Import Project="..\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets" Condition="Exists('..\packages\Kentico.AspNet.Mvc.12.0.29\build\Kentico.AspNet.Mvc.targets')" />
