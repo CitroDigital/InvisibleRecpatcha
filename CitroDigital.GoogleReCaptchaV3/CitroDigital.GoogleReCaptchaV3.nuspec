@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2020</copyright>
+    <tags>Kentico FormBuilder</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1" />
+      <dependency id="Kentico.Libraries" version="12.0.29" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- Include the compiled views dll -->
+    <file src="bin\CitroDigital.GoogleReCaptchaV3.Views.dll" target = "lib\net461" />
+  </files>
+  
+</package>

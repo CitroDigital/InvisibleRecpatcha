@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitroDigital.GoogleReCaptchaV3.Views", "CitroDigital.GoogleReCaptchaV3.Views\CitroDigital.GoogleReCaptchaV3.Views.csproj", "{0E43BC47-246B-4930-9FA5-08E03CF45CE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C733FDDC-D112-4268-925A-391EBE8AF7DD}"
+	ProjectSection(SolutionItems) = preProject
+		Targets\Kentico.DotNetCompilerPlatform.Fix.targets = Targets\Kentico.DotNetCompilerPlatform.Fix.targets
+		Targets\Kentico.EmbeddedViews.targets = Targets\Kentico.EmbeddedViews.targets
+		Targets\Kentico.Resources.targets = Targets\Kentico.Resources.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitroDigital.GoogleReCaptchaV3", "CitroDigital.GoogleReCaptchaV3\CitroDigital.GoogleReCaptchaV3.csproj", "{6AA6B05E-EB7F-4F23-BDDA-40AD9B3C9F28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E43BC47-246B-4930-9FA5-08E03CF45CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E43BC47-246B-4930-9FA5-08E03CF45CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E43BC47-246B-4930-9FA5-08E03CF45CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E43BC47-246B-4930-9FA5-08E03CF45CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AA6B05E-EB7F-4F23-BDDA-40AD9B3C9F28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AA6B05E-EB7F-4F23-BDDA-40AD9B3C9F28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AA6B05E-EB7F-4F23-BDDA-40AD9B3C9F28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AA6B05E-EB7F-4F23-BDDA-40AD9B3C9F28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44586D64-3C63-436D-AC21-F6A5C0067DBF}
+	EndGlobalSection
+EndGlobal
