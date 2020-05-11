@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Targets\Kentico.DotNetCompilerPlatform.Fix.targets = Targets\Kentico.DotNetCompilerPlatform.Fix.targets
 		Targets\Kentico.EmbeddedViews.targets = Targets\Kentico.EmbeddedViews.targets
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitroDigital.InvisibleRecaptcha", "CitroDigital.GoogleReCaptchaV3\CitroDigital.InvisibleRecaptcha.csproj", "{6AA6B05E-EB7F-4F23-BDDA-40AD9B3C9F28}"

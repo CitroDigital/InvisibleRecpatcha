@@ -6,7 +6,7 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <projectUrl>https://github.com/CitroDigital/V3GoogleRecaptcha</projectUrl>
+    <projectUrl>https://github.com/CitroDigital/InvisibleRecpatcha</projectUrl>
     <icon>images\kentico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
