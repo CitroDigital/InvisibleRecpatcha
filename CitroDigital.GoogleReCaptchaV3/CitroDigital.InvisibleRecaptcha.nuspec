@@ -8,7 +8,6 @@
     <owners>$author$</owners>
     <projectUrl>https://github.com/CitroDigital/V3GoogleRecaptcha</projectUrl>
     <icon>images\kentico.png</icon>
-
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <description>Form Component to utilize Google v3 Recaptcha In Kentico Form Builder</description>
@@ -22,8 +21,7 @@
   </metadata>
   <files>
     <!-- Include the compiled views dll -->
-    <file src="bin\CitroDigital.GoogleReCaptchaV3.Views.dll" target = "lib\net461" />
+    <file src="bin\CitroDigital.InvisibleRecaptcha.Views.dll" target = "lib\net461" />
     <file src="..\.nuget\kentico.png" target="images" />
   </files>
-
 </package>

@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Google.Recaptcha.V3.Description" xml:space="preserve">
+  <data name="Google.InvisibleRecaptcha.Description" xml:space="preserve">
     <value>reCAPTCHA
 Provides a robust CAPTCHA service based on reCAPTCHA, which requires the user to click a checkbox indicating the user is not a robot. This will either pass the user immediately (with No CAPTCHA) or challenge them to validate whether or not they are human.</value>
   </data>
-  <data name="Google.Recaptcha.V3.Name" xml:space="preserve">
-    <value>reCAPTCHA V3</value>
+  <data name="Google.InvisibleRecaptcha.Name" xml:space="preserve">
+    <value>Invisible Recaptcha</value>
+  </data>
+  <data name="recaptcha.error.actioninvalid" xml:space="preserve">
+    <value>The action is not valid</value>
+  </data>
+  <data name="recaptcha.error.scoreinvalid" xml:space="preserve">
+    <value>The score is below the threshold</value>
   </data>
 </root>

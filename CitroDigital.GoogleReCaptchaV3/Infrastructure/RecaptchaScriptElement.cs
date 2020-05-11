@@ -1,12 +1,15 @@
-﻿using System;
-using System.IO;
-using CMS.Core;
+﻿using CMS.Core;
 using CMS.DataEngine;
 using CMS.SiteProvider;
+using System;
+using System.IO;
+using System.Text;
+using System.Web;
+using System.Web.Mvc;
 
-namespace CitroDigital.GoogleReCaptchaV3.Infrastructure
+namespace CitroDigital.InvisibleRecaptcha.Infrastructure
 {
-    public class RecaptchaScriptElement
+    internal class RecaptchaScriptElement
     {
         #region Private Variables
 
@@ -17,11 +20,11 @@ namespace CitroDigital.GoogleReCaptchaV3.Infrastructure
 
         #region Constructor
 
-        public RecaptchaScriptElement(Action<RecaptchaOptions> options) : this(Build(options)) { }
+        public RecaptchaScriptElement(Action<InvisibleRecaptchaOptions> options) : this(Build(options)) { }
 
-        private RecaptchaScriptElement(RecaptchaOptions options)
+        private RecaptchaScriptElement(InvisibleRecaptchaOptions options)
         {
-            mApiKey = TryGetKey() ?? throw new ArgumentNullException(nameof(options), @"Please set API key in Kentico Admin Settings via CMSRecaptchaPublicKey or in web.config <add key=""RecaptchaV3Key"" value=""<key>"" />");
+            mApiKey = TryGetKey();
             mAction = options.Action;
         }
 
@@ -43,18 +46,28 @@ namespace CitroDigital.GoogleReCaptchaV3.Infrastructure
             viewContextWriter.Write(@"</script>");
         }
 
+        public IHtmlString Write(string id)
+        {
+            var sb = new StringBuilder();
+            using (var writter = new StringWriter(sb))
+            {
+                Write(writter, id);
+            }
+            return MvcHtmlString.Create(sb.ToString());
+        }
+
         #region Private Methods
 
-        private static RecaptchaOptions Build(Action<RecaptchaOptions> configuration)
+        private static InvisibleRecaptchaOptions Build(Action<InvisibleRecaptchaOptions> configuration)
         {
-            var options = new RecaptchaOptions();
+            var options = new InvisibleRecaptchaOptions();
             configuration(options);
             return options;
         }
 
         private static string TryGetKey()
         {
-            var settingsKey = 
+            var settingsKey =
                 SettingsKeyInfoProvider.GetValue("CMSRecaptchaPublicKey", SiteContext.CurrentSiteID);
 
             if (string.IsNullOrWhiteSpace(settingsKey))

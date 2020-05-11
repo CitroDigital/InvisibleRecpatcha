@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CitroDigital.GoogleReCaptchaV3.App_Data.Global.Resources {
+namespace CitroDigital.InvisibleRecaptcha.App_Data.Global.Resources {
     using System;
     
     
@@ -39,8 +39,8 @@ namespace CitroDigital.GoogleReCaptchaV3.App_Data.Global.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CitroDigital.GoogleReCaptchaV3.App_Data.Global.Resources.CitroDigital.GoogleReCap" +
-                            "tchaV3", typeof(CitroDigital_GoogleReCaptchaV3).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CitroDigital.InvisibleRecaptcha.App_Data.Global.Resources.CitroDigital.GoogleReCa" +
+                            "ptchaV3", typeof(CitroDigital_GoogleReCaptchaV3).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -65,18 +65,36 @@ namespace CitroDigital.GoogleReCaptchaV3.App_Data.Global.Resources {
         ///   Looks up a localized string similar to reCAPTCHA
         ///Provides a robust CAPTCHA service based on reCAPTCHA, which requires the user to click a checkbox indicating the user is not a robot. This will either pass the user immediately (with No CAPTCHA) or challenge them to validate whether or not they are human..
         /// </summary>
-        internal static string Google_Recaptcha_V3_Description {
+        internal static string Google_InvisibleRecaptcha_Description {
             get {
-                return ResourceManager.GetString("Google.Recaptcha.V3.Description", resourceCulture);
+                return ResourceManager.GetString("Google.InvisibleRecaptcha.Description", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to reCAPTCHA V3.
+        ///   Looks up a localized string similar to Invisible Recaptcha.
         /// </summary>
-        internal static string Google_Recaptcha_V3_Name {
+        internal static string Google_InvisibleRecaptcha_Name {
             get {
-                return ResourceManager.GetString("Google.Recaptcha.V3.Name", resourceCulture);
+                return ResourceManager.GetString("Google.InvisibleRecaptcha.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The action is not valid.
+        /// </summary>
+        internal static string recaptcha_error_actioninvalid {
+            get {
+                return ResourceManager.GetString("recaptcha.error.actioninvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The score is below the threshold.
+        /// </summary>
+        internal static string recaptcha_error_scoreinvalid {
+            get {
+                return ResourceManager.GetString("recaptcha.error.scoreinvalid", resourceCulture);
             }
         }
     }

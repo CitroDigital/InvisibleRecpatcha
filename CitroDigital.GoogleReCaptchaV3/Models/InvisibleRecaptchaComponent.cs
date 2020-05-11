@@ -1,38 +1,64 @@
-﻿using CitroDigital.GoogleReCaptchaV3.Models;
+﻿using CitroDigital.InvisibleRecaptcha.Infrastructure;
+using CitroDigital.InvisibleRecaptcha.Models;
 using CMS.Base;
 using CMS.DataEngine;
-using CMS.FormEngine;
 using CMS.Helpers;
 using CMS.SiteProvider;
 using Kentico.Forms.Web.Mvc;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
+using CMS.EventLog;
+using Lucene.Net.Support;
+using Newtonsoft.Json;
 
 [assembly: RegisterFormComponent(
-    RecaptchaV3Component.IDENTIFIER,
-    typeof(RecaptchaV3Component),
-    "{$Google.Recaptcha.V3.Name$}",
-    Description = "{$Google.Recaptcha.V3.Name$}",
+    InvisibleRecaptchaComponent.IDENTIFIER,
+    typeof(InvisibleRecaptchaComponent),
+    "{$Google.InvisibleRecaptcha.Name$}",
+    Description = "{$Google.InvisibleRecaptcha.Name$}",
     IconClass = "icon-recaptcha",
-    ViewName = "~/Views/Shared/Kentico/Selectors/FormComponents/_RecaptchaV3.cshtml"
+    ViewName = "~/Views/Shared/Kentico/Selectors/FormComponents/_InvisibleRecaptcha.cshtml"
 )]
 
-namespace CitroDigital.GoogleReCaptchaV3.Models
+namespace CitroDigital.InvisibleRecaptcha.Models
 {
-    public class RecaptchaV3Component : FormComponent<RecaptchaV3Properties, string>
+    public class InvisibleRecaptchaComponent : FormComponent<InvisibleRecaptchaProperties, string>
     {
-        public const string IDENTIFIER = "Google.Recaptcha.V3";
+        private static readonly Regex mRegex = new Regex("[^a-zA-Z_]");
+        public const string IDENTIFIER = "Google.Recaptcha.Invisible";
         private string mPublicKey;
         private string mPrivateKey;
         private bool? mSkipRecaptcha;
 
-        
+
         [BindableProperty]
         public string RecaptchaResponse { get; set; }
 
         public string Action
         {
-            get { return Properties.Action; }
+            get
+            {
+                if (string.IsNullOrWhiteSpace(Properties.Action))
+                {
+                    return this.GetBizFormComponentContext()?.FormInfo.FormName;
+                }
+
+                return mRegex.Replace(Properties.Action, string.Empty);
+            }
+        }
+
+        public double Score
+        {
+            get
+            {
+                if (double.TryParse(Properties.Score, out var score))
+                {
+                    return score;
+                }
+                //Default score
+                return 0.5;
+            }
         }
 
         public string Value { get; set; }
@@ -118,7 +144,7 @@ namespace CitroDigital.GoogleReCaptchaV3.Models
             validationResultList.AddRange(base.Validate(validationContext));
             if (!this.IsConfigured | VirtualContext.IsInitialized)
                 return (IEnumerable<ValidationResult>)validationResultList;
-            var recaptchaValidator = new RecaptchaValidator
+            var recaptchaValidator = new InvisibleRecaptchaValidator
             {
                 PrivateKey = PrivateKey,
                 RemoteIP = RequestContext.UserHostAddress,
@@ -130,9 +156,17 @@ namespace CitroDigital.GoogleReCaptchaV3.Models
             {
                 if (!string.IsNullOrEmpty(recaptchaResponse.ErrorMessage))
                     validationResultList.Add(new ValidationResult(recaptchaResponse.ErrorMessage));
+                if (Action != null && !CMSString.Equals(Action, recaptchaResponse.Action))
+                    validationResultList.Add(new ValidationResult(ResHelper.GetString("recaptcha.error.actioninvalid")));
+                if (recaptchaResponse.Score < Score)
+                    validationResultList.Add(new ValidationResult(ResHelper.GetString("recaptcha.error.scoreinvalid")));
             }
             else
-                validationResultList.Add(new ValidationResult(ResHelper.GetString("recaptcha.error.serverunavailable", (string)null, true)));
+            {
+                validationResultList.Add(new ValidationResult(ResHelper.GetString("recaptcha.error.serverunavailable",
+                    (string)null, true)));
+            }
+
             return (IEnumerable<ValidationResult>)validationResultList;
         }
     }
