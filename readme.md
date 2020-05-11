@@ -7,16 +7,16 @@ Adds the [Google Invisible Recaptcha](https://developers.google.com/recaptcha/do
 
 # Configuration
 1. Configure reCAPTCHA
-  1. Go to https://www.google.com/recaptcha/admin and sign in with your Google account.
-  2. Select the reCAPTCHA v2 type (other reCAPTCHA types are not supported by default).
-  3. Fill in all required details, including the domain where your site is running (the presentation domain of your MVC live site).
-  4. Copy your Site key and Secret key.
+2. Go to https://www.google.com/recaptcha/admin and sign in with your Google account.
+3. Select the reCAPTCHA v2 type (other reCAPTCHA types are not supported by default).
+4. Fill in all required details, including the domain where your site is running (the presentation domain of your MVC live site).
+5. Copy your Site key and Secret key.
 2. In the Kentico Admin interface
-  1. Open the Settings application in the administration interface.
-  2. Navigate to the Security & Membership -> Protection settings category.
-  3. Under CAPTCHA settings, paste the API keys into the reCAPTCHA site key and reCAPTCHA secret key settings respectively.
-  4. Save the settings.
-3. To remove the label from the form widget see [Adding contextual markup to forms](https://docs.kentico.com/k12sp/developing-websites/form-builder-development/customizing-the-form-widget#CustomizingtheFormwidget-Addingcontextualmarkuptoforms) of the form widget.
+6. Open the Settings application in the administration interface.
+7. Navigate to the Security & Membership -> Protection settings category.
+8. Under CAPTCHA settings, paste the API keys into the reCAPTCHA site key and reCAPTCHA secret key settings respectively.
+9. Save the settings.
+10. To remove the label from the form widget see [Adding contextual markup to forms](https://docs.kentico.com/k12sp/developing-websites/form-builder-development/customizing-the-form-widget#CustomizingtheFormwidget-Addingcontextualmarkuptoforms) of the form widget.
 ```csharp
 public class FormFieldMarkupInjection
 {
@@ -45,10 +45,10 @@ public class FormFieldMarkupInjection
         }
 }
 ```
-4. Drag the Invisible reCAPTCHA form component in the Form Builder
-5. Configure the Action and Score Properties
-  1. Default Score if left blank is 0.5
-  2. Default Action if left blank is the FormName
+11. Drag the Invisible reCAPTCHA form component in the Form Builder
+12. Configure the Action and Score Properties
+13. Default Score if left blank is 0.5
+14. Default Action if left blank is the FormName
 
 
 # Utilization outside of Kentico Forms
