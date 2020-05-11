@@ -115,3 +115,5 @@ InvisibleRecaptcha Attribute has two properties Action and Score.
 @Html.ValidationMessageFor(_ => _.Recaptcha)
 ```
 
+# Issues/Support
+You can submit bugs through the issue list and we will get to them as soon as we can.
