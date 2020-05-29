@@ -553,6 +553,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CitroDigital.GoogleReCaptchaV3.Designer.cs</LastGenOutput>
     </Content>
+    <Content Include="logo-icon.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
