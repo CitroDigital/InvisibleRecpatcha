@@ -43,6 +43,7 @@
     <Compile Include="Infrastructure\InvisibleRecaptchaMarkupRegistration.cs" />
     <Compile Include="Infrastructure\InvisibleRecaptchaResponse.cs" />
     <Compile Include="Infrastructure\InvisibleRecaptchaValidator.cs" />
+    <Compile Include="Infrastructure\RecaptchaSettings.cs" />
     <Compile Include="Models\InvisibleRecaptchaComponent.cs" />
     <Compile Include="Models\InvisibleRecaptchaProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -553,6 +554,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CitroDigital.GoogleReCaptchaV3.Designer.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\recaptcha\loader.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

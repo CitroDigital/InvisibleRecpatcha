@@ -41,7 +41,7 @@ namespace CitroDigital.InvisibleRecaptcha.Infrastructure
         /// <summary>Validate reCAPTCHA response</summary>
         public InvisibleRecaptchaResponse Validate()
         {
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://www.google.com/recaptcha/api/siteverify");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(VERIFYURL);
             httpWebRequest.ProtocolVersion = HttpVersion.Version10;
             httpWebRequest.Timeout = 30000;
             httpWebRequest.Method = "POST";

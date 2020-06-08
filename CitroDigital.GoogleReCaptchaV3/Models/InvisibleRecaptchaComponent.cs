@@ -31,7 +31,6 @@ namespace CitroDigital.InvisibleRecaptcha.Models
         private string mPrivateKey;
         private bool? mSkipRecaptcha;
 
-
         [BindableProperty]
         public string RecaptchaResponse { get; set; }
 
