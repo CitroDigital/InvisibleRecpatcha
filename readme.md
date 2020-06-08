@@ -51,6 +51,12 @@ public class FormFieldMarkupInjection
 14. Default Action if left blank is the FormName
 
 
+# Configuration MVC
+1. Add following helper to _Layout.cshtml to load google script library
+```csharp
+    @Html.RenderRecaptchaLib()
+```
+
 # Utilization outside of Kentico Forms
 There is an HtmlHelper extensions `@Html.InvisibleRecaptchaFor(Expression<Func<TModel, TProperty>> expression, string action = null)` that you can utilize to render the invisible recaptcha inside of a razor form.
 
